@@ -22,15 +22,39 @@ body {
     border: 2px dashed #fff;
 }
 
+/* Main Container */
 .container{
     height: 650px;
     width: 366px;
-    position: relative;
     overflow: hidden;
     border-radius: 15px;
     background-color: #ffffff3d;
     box-shadow: 0px 4px 15px #00000069;
     border: 2px solid #fff;
+}
+
+/* Cover Album */
+.cover-image{
+    width: 100%;
+    height: 366px;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    background: url("../data/img/cover1.jpg");
+    background-size: cover;
+    background-position: center;
+    transform-origin: 0% 0%;
+}
+
+/*TOP MENU items*/
+.top-menu{
+    width: 100%;
+    /* position: absolute; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    font-size: 1rem;
 }
 
 i{
@@ -44,13 +68,11 @@ i.active{
     color: var(--backgroundColor);
 }
 
-.top-menu{
-    border: 1px solid red;
+/* Player Body */
+.player-body{
+    height: 100%;
     width: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem;
-    font-size: 1rem;
+    
+    border: 2px solid red;
 }
+

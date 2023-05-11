@@ -9,6 +9,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 body {
@@ -27,7 +28,7 @@ body {
     height: 650px;
     width: 366px;
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 24px;
     background-color: #ffffff3d;
     box-shadow: 0px 4px 15px #00000069;
     border: 2px solid #fff;
@@ -84,4 +85,35 @@ i.active{
     overflow: auto;
     transform-origin: 0% 0%;
     transition: all 0.3s;
+}
+
+.list {
+    width: 100%;
+    border-spacing: 0px 2px;
+}
+
+.list tr {
+    height: 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-indent: 6px;
+    /* transform-origin: 0% 50%; */
+    transition: ease-out 0.2s;
+}
+
+.list tr:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.list .title {
+    width: 60%;
+    text-align: left;
+    text-indent: 15px;
+    transition: ease-out 0.3s;
+}
+
+.list tr:hover .title {
+    padding-left: 5px;
+    width: 58%;
 }

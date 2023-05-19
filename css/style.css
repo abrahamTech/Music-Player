@@ -45,6 +45,7 @@ body {
     /* top: 0;
     left: 0; */
     /* transform-origin: 0% 0%; */
+    transition: all 0.3s;
 }
 
 .image {
@@ -53,6 +54,7 @@ body {
     background: url("../data/img/cover1.jpg");
     background-size: cover;
     background-position: center;
+    transition: all 0.3s;
 }
 
 /*TOP MENU items*/
@@ -110,7 +112,7 @@ i.active{
     background-color: rgba(0, 0, 0, 0.2);
     text-indent: 6px;
     /* transform-origin: 0% 50%; */
-    transition: ease-out 0.2s;
+    transition: all 0.2s;
 }
 
 .list tr:hover {
@@ -122,7 +124,7 @@ i.active{
     width: 60%;
     text-align: left;
     text-indent: 15px;
-    transition: ease-out 0.3s;
+    transition: all 0.3s;
 }
 
 .list tr:hover .title {
@@ -136,7 +138,7 @@ i.active{
     bottom: -40%;
     font-size: 14px;
     padding: 10px;
-    transition: ease-out 0.3s;
+    transition: all 0.3s;
 }
 
 
@@ -204,7 +206,7 @@ i.active{
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    transition: ease-out 0.3s;
+    transition: all 0.3s;
 }
 
 .info h2 {
@@ -230,7 +232,7 @@ i.active{
     position: absolute;
     bottom: 100px;
     z-index: 10;
-    transition: ease-out 0.3s;
+    transition: all 0.3s;
 }
 
 .controls #playpause {
@@ -251,5 +253,5 @@ i.active{
     bottom: 10px;
     left: 0;
     z-index: 20;
-    transition: ease-out 0.3s;
+    transition: all 0.3s;
 }

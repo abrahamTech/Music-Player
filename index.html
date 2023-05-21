@@ -1,219 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <main class="container ">
-        
+
         <div class="top-menu">
             <i class="fas fa-bars menu-btn"></i>
             <i class="fas fa-search"></i>
         </div>
-        
+
         <div class="cover-image"></div>
         <div class="player-body"></div>
 
-            <!-- Songs List -->
-            <div class="list-wrapper">
-                <table class="list" id="playlist">
-                    <tr class="song">
-                        <td class="no">
-                            <h4>1</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title</h4>
-                        </td>
-                        <td class="length">
-                            <h4>2:03</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                    <tr class="song">
-                        <td class="no">
-                            <h4>2</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title 2</h4>
-                        </td>
-                        <td class="length">
-                            <h4>3:53</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                    <tr class="song">
-                        <td class="no">
-                            <h4>1</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title</h4>
-                        </td>
-                        <td class="length">
-                            <h4>2:03</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                    <tr class="song">
-                        <td class="no">
-                            <h4>2</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title 2</h4>
-                        </td>
-                        <td class="length">
-                            <h4>3:53</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                    <tr class="song">
-                        <td class="no">
-                            <h4>1</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title</h4>
-                        </td>
-                        <td class="length">
-                            <h4>2:03</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                    <tr class="song">
-                        <td class="no">
-                            <h4>2</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title 2</h4>
-                        </td>
-                        <td class="length">
-                            <h4>3:53</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                    <tr class="song">
-                        <td class="no">
-                            <h4>1</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title</h4>
-                        </td>
-                        <td class="length">
-                            <h4>2:03</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                    <tr class="song">
-                        <td class="no">
-                            <h4>2</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title 2</h4>
-                        </td>
-                        <td class="length">
-                            <h4>3:53</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                    <tr class="song">
-                        <td class="no">
-                            <h4>1</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title</h4>
-                        </td>
-                        <td class="length">
-                            <h4>2:03</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                    <tr class="song">
-                        <td class="no">
-                            <h4>2</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title 2</h4>
-                        </td>
-                        <td class="length">
-                            <h4>3:53</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                    <tr class="song">
-                        <td class="no">
-                            <h4>1</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title</h4>
-                        </td>
-                        <td class="length">
-                            <h4>2:03</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                    <tr class="song">
-                        <td class="no">
-                            <h4>2</h4>
-                        </td>
-                        <td class="title">
-                            <h4>Song Title 2</h4>
-                        </td>
-                        <td class="length">
-                            <h4>3:53</h4>
-                        </td>
-                        <td>
-                            <i class="fas fa-heart"></i>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+        <!-- Songs List -->
+        <div class="list-wrapper">
+            <table class="list" id="playlist">
+                <!-- Song Template
+                <tr class="song">
+                    <td class="no">
+                        <h4>1</h4>
+                    </td>
+                    <td class="title">
+                        <h4>Song Title</h4>
+                    </td>
+                    <td class="length">
+                        <h4>2:03</h4>
+                    </td>
+                    <td>
+                        <i class="fas fa-heart"></i>
+                    </td>
+                </tr> -->
+            </table>
+        </div>
 
-            <div class="info">
-                <h2>Song Title</h2>
-                <h3>Artist</h3>
-            </div>
+        <p class="current-song-title">Song</p>
 
-            <div class="controls">
-                <i class="fa fa-backward" id="prev"></i>
-                <i class="fa fa-play" id="playpause"></i>
-                <i class="fa fa-forward" id="next"></i>
-            </div>
+        <div class="info">
+            <h2>Song Title</h2>
+            <h3>Artist</h3>
+        </div>
 
-            <div class="more-controls">
-                <i class="fas fa-heart" id="current-favorite"></i>
-                <i class="fas fa-random" id="shuffle"></i>
-                <i class="fas fa-repeat" id="repeat"></i>
-                <i class="fas fa-gear" id="options"></i>
-            </div>
-            
-            <p class="current-song-title">Song</p> 
+        <div class="controls">
+            <i class="fa fa-backward" id="prev"></i>
+            <i class="fa fa-play" id="playpause"></i>
+            <i class="fa fa-forward" id="next"></i>
+        </div>
+
+        <div class="more-controls">
+            <i class="fas fa-heart" id="current-favorite"></i>
+            <i class="fas fa-random" id="shuffle"></i>
+            <i class="fas fa-repeat" id="repeat"></i>
+            <i class="fas fa-gear" id="options"></i>
+        </div>
+
 
     </main>
     <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -35,14 +35,36 @@ const songs = [
 ];
 
 const playlistContainer = document.querySelector("#playlist");
+const infoWrapper = document.querySelector(".info");
+const coverImage = document.querySelector(".cover-image");
+const currentSongTitle = document.querySelector(".current-song-title");
 
+//Get Songs Time
 const formatTime = (time)=>{
+    //Format time Like 2:30
     let minutes = Math.floor(time / 60);
     let seconds = Math.floor(time % 60);
 
+    //Add traling zero if seconds less than 10
     seconds = seconds < 10 ? `0${seconds}` : seconds;
 
     return `${minutes}:${seconds}`;
+};
+
+//Add Audio Play Functionality
+const loadSong = (num) => {
+
+    //Change title artist and times to current song
+    infoWrapper.innerHTML = `
+        <h2>${songs[num].title}</h2>
+        <h3>${songs[num].artist}</h3>
+    `;
+
+    //Current Song Title (ListSongs Menu)
+    currentSongTitle.innerHTML = songs[num].title;
+
+    //Change cover image
+    coverImage.style.backgroundImage = `url(../data/img/${songs[num].img_src})`;
 };
 
 const updatePlaylist = (songs) => {
@@ -90,6 +112,7 @@ const updatePlaylist = (songs) => {
 
 const init = () => {
     updatePlaylist(songs);
+    loadSong(currentSong);
 }
 
 init();

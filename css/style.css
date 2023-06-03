@@ -65,7 +65,7 @@ body {
     background-size: cover;
     background-position: center;
     transform-origin: 0% 0%;
-    transition: all 0.3s;
+    transition: all 0.3s ease-in;
 }
 
 /*TOP MENU items*/

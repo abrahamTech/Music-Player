@@ -38,6 +38,7 @@ const playlistContainer = document.querySelector("#playlist");
 const infoWrapper = document.querySelector(".info");
 const coverImage = document.querySelector(".cover-image");
 const currentSongTitle = document.querySelector(".current-song-title");
+const currentFavorite = document.querySelector("#current-favorite");
 
 //Get Songs Time
 const formatTime = (time)=>{
@@ -65,6 +66,16 @@ const loadSong = (num) => {
 
     //Change cover image
     coverImage.style.backgroundImage = `url(../data/img/${songs[num].img_src})`;
+
+    //Add src of current song to "audio" variable
+    audio.src = `data/music/${songs[num].src}`;
+
+    //Check if song is in favorite highlight
+    if (favorites.includes(num)){
+        currentFavorite.classList.add("active");
+    } else{
+        currentFavorite.classList.remove("active");
+    }
 };
 
 const updatePlaylist = (songs) => {
@@ -109,6 +120,62 @@ const updatePlaylist = (songs) => {
 
 }
 
+//Buttons Functionality
+const playPauseBtn = document.querySelector("#playpause");
+const nextBtn = document.querySelector("#next");
+const prevBtn = document.querySelector("#prev");
+
+//Play Button
+playPauseBtn.addEventListener("click", ()=>{
+    if(playing){
+        //Pause if already playing
+        playPauseBtn.classList.replace("fa-pause", "fa-play");
+        playing = false;
+        audio.pause();
+    } else {
+        //If not playing play
+        playPauseBtn.classList.replace("fa-play", "fa-pause");
+        playing = true;
+        audio.play();
+    }
+});
+
+//Next Song
+const nextSong = () => {
+
+    //If current song is not last in playlist
+    if(currentSong < songs.length - 1){
+        currentSong++;
+    } else {
+        //If its last song the play the first one
+        currentSong = 0;
+    }
+    loadSong(currentSong);
+
+    //After load if song was playing keep playing the new current too
+    if(playing){
+        audio.play();
+    }
+};
+
+nextBtn.addEventListener("click", nextSong);
+
+//Prev Song
+const prevSong = () => {
+    if(currentSong > 0 && currentSong < songs.length){
+        currentSong--;
+    } else {
+        currentSong = songs.length -1;
+    }
+
+    loadSong(currentSong);
+
+    if(playing){
+        audio.play();
+    }
+};
+
+prevBtn.addEventListener("click", prevSong);
 
 const init = () => {
     updatePlaylist(songs);
@@ -116,4 +183,4 @@ const init = () => {
 }
 
 init();
-//28:44
+//39:00

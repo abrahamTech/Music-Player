@@ -161,8 +161,12 @@ playPauseBtn.addEventListener("click", ()=>{
 //Next Song
 const nextSong = () => {
 
+    //Shuffle when playing next song
+    if(shuffle){
+        shuffleFunc();
+    }
     //If current song is not last in playlist
-    if(currentSong < songs.length - 1){
+    else if(currentSong < songs.length - 1){
         currentSong++;
     } else {
         //If its last song the play the first one
@@ -180,7 +184,11 @@ nextBtn.addEventListener("click", nextSong);
 
 //Prev Song
 const prevSong = () => {
-    if(currentSong > 0 && currentSong < songs.length){
+    //Shuffle when playing next song
+    if(shuffle){
+        shuffleFunc();
+    }
+    else if(currentSong > 0 && currentSong < songs.length){
         currentSong--;
     } else {
         currentSong = songs.length -1;
@@ -225,10 +233,28 @@ currentFavorite.addEventListener("click", () => {
     addToFavorites(currentSong);
 });
 
+//Shuffle  Btn
+const shuffleBtn = document.querySelector("#shuffle");
+
+const shuffleSongs = () => {
+    //If shuffle false make it true and vice versa
+    shuffle = !shuffle;
+    shuffleBtn.classList.toggle("active");
+};
+
+shuffleBtn.addEventListener("click", shuffleSongs);
+
+//Shuffle Functionality
+const shuffleFunc = () => {
+    if(shuffle) {
+        currentSong = Math.floor(Math.random() * songs.length);
+    }
+}
+
 const init = () => {
     updatePlaylist(songs);
     loadSong(currentSong);
 };
 
 init();
-//39:00
+//51:15

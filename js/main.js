@@ -108,6 +108,24 @@ const updatePlaylist = (songs) => {
 
         playlistContainer.appendChild(tr);
 
+        //Play song when clicked on playlist songs
+        tr.addEventListener("click", (e)=> {
+            //Add to favorites when clicked on heart icon
+            if(e.target.classList.contains("fa-heart")){
+                addToFavorites(index);
+                e.target.classList.toggle("active");
+                //If heart clicked just add, don't play
+                return;
+            }
+
+            currentSong = index;
+            loadSong(currentSong);
+            audio.play();
+            container.classList.remove("active");
+            playPauseBtn.classList.replace("fa-play", "fa-pause");
+            playing = true;
+        })
+
         const audioDuration = new Audio(`../data/music/${src}`);
 
         audioDuration.addEventListener("loadedmetadata", () => {
@@ -177,10 +195,40 @@ const prevSong = () => {
 
 prevBtn.addEventListener("click", prevSong);
 
+//Favorite Song
+const addToFavorites = (index) => {
+    //Check if already in favorites then remove
+    if(favorites.includes(index)) {
+        favorites = favorites.filter((item) => item !== index);
+
+        //If current playing song is removed also remove currentFavorite
+        currentFavorite.classList.remove("active");
+    } else {
+        //If not already in favorites add
+        favorites.push(index);
+
+        //If coming from current favorite mode that is index and current are equals
+        if(index === currentSong){
+            currentFavorite.classList.add("active");
+        }
+    }
+
+    //After adding favorite render playlist to show favorites
+    updatePlaylist(songs);
+    console.log(favorites);
+};
+
+//Add to favorite when clicked heart un current playing mode
+currentFavorite.addEventListener("click", () => {
+    //Its important to first toggle de currentFarite heart icon
+    currentFavorite.classList.toggle("active");
+    addToFavorites(currentSong);
+});
+
 const init = () => {
     updatePlaylist(songs);
     loadSong(currentSong);
-}
+};
 
 init();
 //39:00

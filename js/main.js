@@ -1,6 +1,12 @@
 const container = document.querySelector(".container");
 const menuBtn = document.querySelector(".menu-btn");
 
+//Progress Bar Elements
+const progressBar = document.querySelector(".bar");
+const progressDot = document.querySelector(".dot");
+const currentTimeEl = document.querySelector(".current-time");
+const durationEl = document.querySelector(".duration");
+
 menuBtn.addEventListener("click", ()=>{
     container.classList.toggle("active");
 });
@@ -298,10 +304,41 @@ audio.addEventListener("ended", () => {
     }
 })
 
+//Progress Bar Function
+const progress = () => {
+    //Get duration and current time from audio
+    let { duration, currentTime } = audio;
+
+    //If anyone not a number make it 0
+    isNaN(currentTime) ? (currentTime = 0) : currentTime;
+    isNaN(duration) ? (duration = 0) : duration;
+
+    //Update time elements
+    currentTimeEl.innerHTML = formatTime(currentTime);
+    durationEl.innerHTML = formatTime(duration);
+
+    //Move Progress Dot
+    let progressPercentage = (currentTime / duration) * 100;
+    progressDot.style.left = `${progressPercentage}%`;
+
+}
+
+//Update progress time on audio timeupdate event
+audio.addEventListener("timeupdate", progress);
+
+//Change progree when clicked on bar (Don´t Arrow Function)
+function setProgress (e) {
+    let width = this.clientWidth;
+    let clickX = e.offsetX;
+    let duration = audio.duration;
+    audio.currentTime = (clickX / width) * duration;
+}
+
+progressBar.addEventListener("click", setProgress);
+
 const init = () => {
     updatePlaylist(songs);
     loadSong(currentSong);
 };
 
 init();
-//51:15

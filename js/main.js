@@ -251,6 +251,53 @@ const shuffleFunc = () => {
     }
 }
 
+//Reapeat Playlist Functionality
+const repeatBtn = document.querySelector("#repeat");
+
+const repeatPlaylist = () => {
+    if(repeat === 0){
+        //If repeat is off, make it 1 -> Repeat current song
+        repeat = 1;
+        //If repeat on make button active
+        repeatBtn.classList.add("active");
+    } else if (repeat === 1) {
+        //If repeat is 1 that is only repeat current song make it 2 that means repeat playlist
+        repeat = 2;
+        repeatBtn.classList.add("active");
+    } else {
+        //Else turn off repeat
+        repeat = 0;
+        repeatBtn.classList.remove("active");
+    }
+}
+
+repeatBtn.addEventListener("click", repeatPlaylist);
+
+//Repeat on audio end
+audio.addEventListener("ended", () => {
+    if(repeat === 1){
+        //If repeat current song, again load current song
+        loadSong(currentSong);
+        audio.play();
+    } else if (repeat === 2){
+        //If repeat playlist, play next song
+        nextSong();
+        audio.play();
+    } else {
+        //If repeat off, just play all playlist one time then STOP
+        if(currentSong === songs.length - 1) {
+            // If it's last song in playlist, STOP playing now
+            audio.pause();
+            playPauseBtn.classList.replace("fa-pause", "fa-play");
+            playing = false;
+        } else {
+            //If not last continue to next
+            nextSong();
+            audio.play();
+        }
+    }
+})
+
 const init = () => {
     updatePlaylist(songs);
     loadSong(currentSong);
